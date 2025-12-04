@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shuyi Xiong | Artist Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 连接外部样式表 -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">SHUYI XIONG</div>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Music / Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 顶部 hero 区 -->
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-tag">Electronic Producer · Sound Designer</p>
+        <h1>Hi, I’m Shuyi. I make electronic music and sound-focused projects.</h1>
+        <p class="hero-subtitle">
+          This is my simple artist website for my programming final project. It introduces who I am,
+          shows a few music / sound projects, and shares basic contact links.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">View projects</a>
+          <a href="#contact" class="btn ghost">Contact me</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-line"></div>
+        <p class="hero-label">Current focus</p>
+        <ul>
+          <li>Electronic production & sound design</li>
+          <li>Concept-based tracks and soundscapes</li>
+          <li>Mixing, texture, and groove</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About 区 -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <p class="section-text">
+        I am an Electronic Production & Design student who enjoys building detailed sound worlds and
+        rhythm-driven tracks. I like starting projects from different places: a groove, a sound design
+        idea, a chord progression, or even a visual or story concept.
+      </p>
+      <p class="section-text">
+        This site is part of my programming class final project. It is built with basic HTML, CSS,
+        and a small amount of JavaScript. The goal is to practice core web skills while making
+        something I can actually use as an artist.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects 区 -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Music / Projects</h2>
+      <p class="section-text">
+        A few example projects are listed here. For the class, I can replace these with real pieces,
+        links, or embeds from SoundCloud / Spotify / YouTube.
+      </p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3 class="project-title">Mosaic – multi-part electronic track</h3>
+          <p class="project-desc">
+            A concept track that moves through different sections like a mosaic: layered rhythms,
+            evolving textures, and shifting energy. Focus on structure and contrast.
+          </p>
+          <p class="project-meta">
+            Tools: Ableton Live, software synths, custom sound design.
+          </p>
+          <!-- 把 # 换成真实链接就行 -->
+          <a href="#" class="project-link">Listen (placeholder link)</a>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title">Deep Sea Soundscape</h3>
+          <p class="project-desc">
+            A two-part soundscape built around the idea of exploring the ocean: surface-level calm,
+            then darker, more chaotic deep-sea textures.
+          </p>
+          <p class="project-meta">
+            Tools: synths, processed recordings, creative FX, automation.
+          </p>
+          <a href="#" class="project-link">More details (placeholder)</a>
+        </article>
+
+        <article class="project-card">
+          <h3 class="project-title">Hybrid Live Set</h3>
+          <p class="project-desc">
+            A small live set combining drum machines, software instruments, and live FX control.
+            Focus on transitions, tension and release, and performance workflow.
+          </p>
+          <p class="project-meta">
+            Tools: Ableton Live, controller, drum machine.
+          </p>
+          <a href="#" class="project-link">Performance notes (placeholder)</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact 区 -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-text">
+        For collaborations, class projects, or questions about my work, you can reach me using the
+        contact info below.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3>Email</h3>
+          <!-- 把邮箱改成你自己的 -->
+          <a href="mailto:youremail@example.com">youremail@example.com</a>
+        </div>
+
+        <div class="contact-item">
+          <h3>SoundCloud / Links</h3>
+          <p>Replace these with real links later:</p>
+          <ul>
+            <li><a href="#" target="_blank">SoundCloud (placeholder)</a></li>
+            <li><a href="#" target="_blank">Instagram (placeholder)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 返回顶部按钮 -->
+  <button id="backToTop" class="back-to-top">↑ Back to top</button>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Shuyi Xiong · Artist website for programming final project.</p>
+    </div>
+  </footer>
+
+  <!-- 简单交互的 JS -->
+  <script src="script.js"></script>
+</body>
+</html>
 
