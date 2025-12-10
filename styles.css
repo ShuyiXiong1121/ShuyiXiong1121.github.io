@@ -15,8 +15,50 @@ body {
   margin: 0;
   font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top, #18183a 0, #040415 55%);
+  background-color: #02020a;  /* 纯黑偏蓝一点 */
   line-height: 1.6;
+  overflow-x: hidden;         /* 防止色块移动时出现横向滚动条 */
+}
+
+/* 背景柔光色块 */
+
+.bg-blob {
+  position: fixed;
+  z-index: -1;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: transform 0.1s linear;
+}
+
+/* 左上偏蓝 */
+.blob1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle at 30% 30%, #3f7cff, transparent 60%);
+  top: -15%;
+  left: -18%;
+}
+
+/* 右中偏蓝紫 */
+.blob2 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle at 40% 30%, #8b4dff, transparent 60%);
+  top: 30%;
+  right: -12%;
+}
+
+/* 左下偏紫红 */
+.blob3 {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle at 40% 40%, #ff4b7a, transparent 65%);
+  bottom: -18%;
+  left: 8%;
+  opacity: 0.4;
 }
 
 /* 通用布局 */
@@ -112,17 +154,21 @@ body {
   align-items: center;
 }
 
+/* 极简 tag：左边一条竖线 + 小字 */
 .hero-tag {
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   color: var(--muted);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--accent);
 }
 
+/* 标题：只写 Shuyi Xiong */
 .hero h1 {
-  margin: 0 0 0.8rem;
-  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.8rem, 2.6vw, 2.2rem);
   font-weight: 600;
 }
 
