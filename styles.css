@@ -324,4 +324,51 @@ body {
   color: var(--muted);
 }
 
-/* ===== Back to to*
+/* ===== Back to top ===== */
+
+.back-to-top {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(4, 4, 21, 0.96);
+  color: var(--text);
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* ===== Footer ===== */
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.3rem 0 2rem;
+  background: transparent;
+}
+
+.footer-inner {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ===== 响应式 ===== */
+
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .main-nav a {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+}
