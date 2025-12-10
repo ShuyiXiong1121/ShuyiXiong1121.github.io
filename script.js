@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 自动更新年份
+  // 年份
   const yearSpan = document.getElementById("year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
@@ -20,33 +20,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 返回顶部按钮显示 / 隐藏
+  // Back to top 按钮
   const backToTopBtn = document.getElementById("backToTop");
-
   window.addEventListener("scroll", () => {
     if (!backToTopBtn) return;
-    if (window.scrollY > 300) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
+    backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
   });
-
   if (backToTopBtn) {
     backToTopBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
-  // 不规则色块随滚动轻微移动（视差）
-  const shapes = document.querySelectorAll(".color-shape");
-
+  // blob 轻微视差移动
+  const blobs = document.querySelectorAll(".bg-blob");
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
-    shapes.forEach((shape, index) => {
-      const speed = 0.12 + index * 0.06;
-      const offset = y * speed;
-      shape.style.transform = `translateY(${offset}px)`;
+    blobs.forEach((blob, i) => {
+      const speed = 0.08 + i * 0.04;
+      blob.style.transform = `translateY(${y * speed}px)`;
     });
   });
 });
