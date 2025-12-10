@@ -1,4 +1,3 @@
-// 等 DOM 加载完再跑脚本，避免奇怪问题
 document.addEventListener("DOMContentLoaded", () => {
   // 自动更新年份
   const yearSpan = document.getElementById("year");
@@ -6,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // 导航和平滑滚动
+  // 导航平滑滚动
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(link => {
     link.addEventListener("click", event => {
@@ -39,15 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 背景色块随滚动明显移动（parallax）
+  // 背景色块视差滚动
   const blobs = document.querySelectorAll(".bg-blob");
 
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
 
     blobs.forEach((blob, index) => {
-      // 速度调得比较大一点，方便你肉眼看到它在动
-      const speed = 0.25 + index * 0.12;
+      // 不同速度，让它们有层次
+      const speed = 0.22 + index * 0.1;
       const offset = scrollY * speed;
       blob.style.transform = `translateY(${offset}px)`;
     });
