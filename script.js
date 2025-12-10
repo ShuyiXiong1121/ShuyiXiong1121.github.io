@@ -4,7 +4,7 @@ if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
 
-// 导航和按钮的平滑滚动
+// 导航和平滑滚动
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach(link => {
   link.addEventListener("click", event => {
@@ -31,8 +31,23 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// 点击返回顶部
 if (backToTopBtn) {
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-}
+});
+
+// 背景色块随滚动轻微移动（parallax）
+const blobs = document.querySelectorAll(".bg-blob");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  blobs.forEach((blob, index) => {
+    const speed = 0.03 + index * 0.02; // 每个块速度不同一点
+    const offset = scrollY * speed;
+    blob.style.transform = `translateY(${offset}px)`;
+  });
+});
+
