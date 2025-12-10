@@ -38,15 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 背景层视差：根据滚动改变 background-position
-  const layers = document.querySelectorAll(".bg-layer");
+  // 不规则色块随滚动轻微移动（视差）
+  const shapes = document.querySelectorAll(".color-shape");
 
   window.addEventListener("scroll", () => {
     const y = window.scrollY;
-    layers.forEach((layer, index) => {
-      const speed = 0.02 + index * 0.015; // 不同速度
-      const offset = -y * speed;
-      layer.style.backgroundPosition = `center ${offset}px`;
+    shapes.forEach((shape, index) => {
+      const speed = 0.12 + index * 0.06;
+      const offset = y * speed;
+      shape.style.transform = `translateY(${offset}px)`;
     });
   });
 });
