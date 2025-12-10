@@ -1,44 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // 年份
-  const yearSpan = document.getElementById("year");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
+// 选中所有背景 shape
+const shapes = document.querySelectorAll(".shape");
 
-  // 导航平滑滚动
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach(link => {
-    link.addEventListener("click", event => {
-      const targetId = link.getAttribute("href");
-      if (targetId && targetId.length > 1) {
-        event.preventDefault();
-        const target = document.querySelector(targetId);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    });
-  });
+const updateShapes = () => {
+  const scrollY = window.scrollY || window.pageYOffset;
 
-  // Back to top 按钮
-  const backToTopBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    if (!backToTopBtn) return;
-    backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+  shapes.forEach((el) => {
+    const speed = parseFloat(el.dataset.speed || "0.2");
+    const offset = scrollY * speed;
 
-  // blob 轻微视差移动
-  const blobs = document.querySelectorAll(".bg-blob");
-  window.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    blobs.forEach((blob, i) => {
-      const speed = 0.08 + i * 0.04;
-      blob.style.transform = `translateY(${y * speed}px)`;
-    });
+    // 在原来基础上做一个轻微 translateY
+    el.style.transform = `translate3d(0, ${offset}px, 0)`;
   });
-});
+};
+
+window.addEventListener("scroll", updateShapes);
+window.addEventListener("load", updateShapes);
