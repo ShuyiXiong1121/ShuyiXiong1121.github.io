@@ -36,16 +36,17 @@ if (backToTopBtn) {
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-});
+}
 
-// 背景色块随滚动轻微移动（parallax）
+// 背景色块随滚动明显移动（parallax）
 const blobs = document.querySelectorAll(".bg-blob");
 
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
   blobs.forEach((blob, index) => {
-    const speed = 0.03 + index * 0.02; // 每个块速度不同一点
+    // 增大速度，让移动更明显
+    const speed = 0.12 + index * 0.05;
     const offset = scrollY * speed;
     blob.style.transform = `translateY(${offset}px)`;
   });
