@@ -1,7 +1,6 @@
 :root {
   --bg: #02020a;
-  --bg-alt: #02020a;
-  --accent: #ff4b5c;
+  --accent: #ff4b6f;
   --text: #f9f9ff;
   --muted: #a4a7c9;
   --border: #252547;
@@ -20,57 +19,40 @@ body {
   overflow-x: hidden;
 }
 
-/* 背景柔光色块：不规则、多重渐变，会滚动 */
+/* ===== 背景层：大块渐变色，模糊、不规则，随滚动移动 ===== */
 
-.bg-blob {
+.bg-layer {
   position: fixed;
+  inset: -15%;
   z-index: -1;
-  width: 620px;
-  height: 620px;
   pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 180% 180%;
+  filter: blur(40px);
   mix-blend-mode: screen;
-  filter: blur(130px);
   opacity: 0.8;
-  transition: transform 0.05s linear;
-  border-radius: 46% 64% 55% 45% / 42% 50% 58% 60%;
 }
 
-/* 左上蓝色块，稍微拉长一点 */
-.blob1 {
-  top: -20%;
-  left: -25%;
-  background:
-    radial-gradient(circle at 20% 20%, #4f7cff 0, transparent 55%),
-    radial-gradient(circle at 80% 70%, #3c52ff 0, transparent 60%);
-  transform: rotate(-12deg);
+/* 左上偏蓝紫，分层叠加，形状不规则 */
+.bg-layer-1 {
+  background-image:
+    radial-gradient(circle at 10% 15%, #3b5dff 0, transparent 55%),
+    radial-gradient(circle at 70% 40%, #5c37ff 0, transparent 55%),
+    radial-gradient(circle at 30% 85%, #142248 0, transparent 60%);
+  background-position: center top;
 }
 
-/* 右侧蓝紫块，覆盖 Music / Projects 区域 */
-.blob2 {
-  top: 20%;
-  right: -18%;
-  width: 640px;
-  height: 640px;
-  background:
-    radial-gradient(circle at 30% 20%, #8b4dff 0, transparent 55%),
-    radial-gradient(circle at 80% 80%, #4a2cff 0, transparent 65%);
-  transform: rotate(18deg);
+/* 右下偏紫红，给底部和 Music 那一块带一点颜色 */
+.bg-layer-2 {
+  opacity: 0.7;
+  background-image:
+    radial-gradient(circle at 85% 15%, #ff4b94 0, transparent 55%),
+    radial-gradient(circle at 70% 80%, #8220ff 0, transparent 55%),
+    radial-gradient(circle at 20% 90%, #451139 0, transparent 60%);
+  background-position: center bottom;
 }
 
-/* 底部紫红块，给 Contact / Footer 一点光，明显但不抢戏 */
-.blob3 {
-  bottom: -30%;
-  left: -10%;
-  width: 700px;
-  height: 700px;
-  opacity: 0.6;
-  background:
-    radial-gradient(circle at 35% 30%, #ff4b7a 0, transparent 55%),
-    radial-gradient(circle at 75% 80%, #ff2f9b 0, transparent 60%);
-  transform: rotate(-20deg);
-}
-
-/* 通用布局 */
+/* ===== 通用布局 ===== */
 
 .container {
   max-width: 960px;
@@ -89,10 +71,6 @@ body {
   border-top: none;
 }
 
-.section-alt {
-  background: transparent;
-}
-
 .section-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -105,7 +83,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* 顶部导航 */
+/* ===== 顶部导航 ===== */
 
 .site-header {
   position: sticky;
@@ -157,7 +135,7 @@ body {
   width: 100%;
 }
 
-/* Hero */
+/* ===== Hero ===== */
 
 .hero {
   padding: 3.4rem 0 2.8rem;
@@ -266,7 +244,7 @@ body {
   color: var(--muted);
 }
 
-/* Projects */
+/* ===== Projects ===== */
 
 .project-grid {
   display: grid;
@@ -310,7 +288,7 @@ body {
   text-decoration: underline;
 }
 
-/* Contact */
+/* ===== Contact ===== */
 
 .contact-grid {
   display: grid;
@@ -346,7 +324,7 @@ body {
   color: var(--muted);
 }
 
-/* Back to top */
+/* ===== Back to top ===== */
 
 .back-to-top {
   position: fixed;
@@ -362,12 +340,12 @@ body {
   display: none;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 1.3rem 0 2rem;
-  background: #02020a;
+  background: transparent;
 }
 
 .footer-inner {
@@ -376,7 +354,7 @@ body {
   color: var(--muted);
 }
 
-/* 响应式 */
+/* ===== 响应式 ===== */
 
 @media (max-width: 768px) {
   .hero-inner {
