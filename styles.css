@@ -1,7 +1,7 @@
 :root {
   --bg: #02020a;
   --bg-alt: #02020a;
-  --accent: #ff4b5c;          /* 暗一点的红 */
+  --accent: #ff4b5c;
   --text: #f9f9ff;
   --muted: #a4a7c9;
   --border: #252547;
@@ -15,50 +15,59 @@ body {
   margin: 0;
   font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
-  background-color: var(--bg);  /* 全站统一黑底 */
+  background-color: var(--bg);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* 背景柔光色块：大、柔、滚动时会动 */
+/* 背景柔光色块：不规则、多重渐变，会滚动 */
 
 .bg-blob {
   position: fixed;
   z-index: -1;
-  border-radius: 999px;
+  width: 620px;
+  height: 620px;
   pointer-events: none;
   mix-blend-mode: screen;
-  filter: blur(120px);
-  opacity: 0.75;
+  filter: blur(130px);
+  opacity: 0.8;
   transition: transform 0.05s linear;
+  border-radius: 46% 64% 55% 45% / 42% 50% 58% 60%;
 }
 
-/* 左上偏蓝，照亮 hero 区域 */
+/* 左上蓝色块，稍微拉长一点 */
 .blob1 {
-  width: 520px;
-  height: 420px;
-  background: radial-gradient(circle at 20% 30%, #4c7cff, transparent 60%);
-  top: -18%;
-  left: -20%;
+  top: -20%;
+  left: -25%;
+  background:
+    radial-gradient(circle at 20% 20%, #4f7cff 0, transparent 55%),
+    radial-gradient(circle at 80% 70%, #3c52ff 0, transparent 60%);
+  transform: rotate(-12deg);
 }
 
-/* 中部偏蓝紫，覆盖 Music / Projects */
+/* 右侧蓝紫块，覆盖 Music / Projects 区域 */
 .blob2 {
-  width: 480px;
-  height: 420px;
-  background: radial-gradient(circle at 40% 20%, #8b4dff, transparent 65%);
-  top: 25%;
-  right: -10%;
+  top: 20%;
+  right: -18%;
+  width: 640px;
+  height: 640px;
+  background:
+    radial-gradient(circle at 30% 20%, #8b4dff 0, transparent 55%),
+    radial-gradient(circle at 80% 80%, #4a2cff 0, transparent 65%);
+  transform: rotate(18deg);
 }
 
-/* 底部偏紫红，只在 Contact / Footer 附近一点光，不要一整条色带 */
+/* 底部紫红块，给 Contact / Footer 一点光，明显但不抢戏 */
 .blob3 {
-  width: 480px;
-  height: 420px;
-  background: radial-gradient(circle at 50% 80%, #ff4b7a, transparent 72%);
-  bottom: -35%;      /* 往下拉很多，远离 projects */
-  left: 8%;
-  opacity: 0.35;     /* 比较淡 */
+  bottom: -30%;
+  left: -10%;
+  width: 700px;
+  height: 700px;
+  opacity: 0.6;
+  background:
+    radial-gradient(circle at 35% 30%, #ff4b7a 0, transparent 55%),
+    radial-gradient(circle at 75% 80%, #ff2f9b 0, transparent 60%);
+  transform: rotate(-20deg);
 }
 
 /* 通用布局 */
@@ -69,7 +78,7 @@ body {
   padding: 0 1.25rem;
 }
 
-/* Section：统一黑背景，用细线分区 */
+/* Section：统一背景，用细线分区 */
 
 .section {
   padding: 3rem 0;
@@ -161,7 +170,6 @@ body {
   align-items: center;
 }
 
-/* 极简 tag：左边一条竖线 + 小字 */
 .hero-tag {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -172,7 +180,6 @@ body {
   border-left: 2px solid var(--accent);
 }
 
-/* 标题：Shuyi Xiong */
 .hero h1 {
   margin: 0 0 0.7rem;
   font-size: clamp(1.8rem, 2.6vw, 2.2rem);
@@ -322,4 +329,68 @@ body {
   color: var(--accent);
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-item ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.contact-item li {
+  margin-bottom: 0.3rem;
+  color: var(--muted);
+}
+
+/* Back to top */
+
+.back-to-top {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(4, 4, 21, 0.96);
+  color: var(--text);
+  font-size: 0.78rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.3rem 0 2rem;
+  background: #02020a;
+}
+
+.footer-inner {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* 响应式 */
+
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .main-nav a {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
 }
