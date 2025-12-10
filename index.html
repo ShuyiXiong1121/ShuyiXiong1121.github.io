@@ -15,10 +15,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- 背景柔光色块（不规则形状，会滚动） -->
-  <div class="bg-blob blob1"></div>
-  <div class="bg-blob blob2"></div>
-  <div class="bg-blob blob3"></div>
+  <!-- 背景层：大块蓝 / 紫 / 紫红渐变，会随滚动轻微移动 -->
+  <div class="bg-layer bg-layer-1"></div>
+  <div class="bg-layer bg-layer-2"></div>
 
   <!-- 顶部导航 -->
   <header class="site-header">
@@ -51,14 +50,14 @@
         </div>
 
         <div class="hero-media">
-          <!-- 真人头像 -->
+          <!-- 真人头像（注意文件名 Profile.jpg） -->
           <img
             src="images/Profile.jpg?v=1"
             alt="Shuyi Xiong in the studio"
             class="hero-photo"
           />
 
-          <!-- 艺人 avatar -->
+          <!-- 艺人 avatar（Avatar.JPG） -->
           <div class="avatar-card">
             <img
               src="images/Avatar.JPG?v=1"
@@ -89,7 +88,7 @@
     </section>
 
     <!-- Music / Projects -->
-    <section id="projects" class="section section-alt">
+    <section id="projects" class="section">
       <div class="container">
         <h2 class="section-title">Music / Projects</h2>
         <p class="section-text">
