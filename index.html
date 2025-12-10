@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- 背景柔光色块 -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
   <!-- 顶部导航 -->
   <header class="site-header">
     <div class="container header-inner">
@@ -28,15 +33,15 @@
   </header>
 
   <main>
-    <!-- Hero：一句话 + 头像 + avatar -->
+    <!-- Hero：标题 + 头像 + avatar -->
     <section class="hero" id="top">
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="hero-tag">Electronic Producer · Sound Designer · BUA</p>
-          <h1>Hi, I’m Shuyi. I make electronic music and sound-driven projects.</h1>
+          <p class="hero-tag">Electronic music · Sound design</p>
+          <h1>Shuyi Xiong</h1>
           <p class="hero-subtitle">
-            A minimal artist page built as my programming final project. It introduces who I am,
-            shows a few projects, and links out to where you can hear my music.
+            Producer and sound designer focused on groove, texture, and narrative-driven electronic music.
+            This minimal site is part of my programming final project and links to a few projects and artist pages.
           </p>
           <div class="hero-buttons">
             <a href="#projects" class="btn primary">Listen / View projects</a>
@@ -47,7 +52,7 @@
         <div class="hero-media">
           <!-- 真人头像 -->
           <img
-            src="images/profile.jpg"
+            src="images/profile.JPG"
             alt="Shuyi Xiong in the studio"
             class="hero-photo"
           />
@@ -55,7 +60,7 @@
           <!-- 艺人 avatar -->
           <div class="avatar-card">
             <img
-              src="images/avatar.jpg"
+              src="images/avatar.JPG"
               alt="BUA artist avatar"
               class="avatar-image"
             />
@@ -75,14 +80,14 @@
           a track alive.
         </p>
         <p class="section-text">
-          This website is coded with simple HTML and CSS, plus a small amount of JavaScript if
-          needed. The goal is to keep the layout minimal and readable, with a dark blue / violet
-          palette and a hint of red to match my artist identity.
+          This website is coded with simple HTML and CSS, plus a small amount of JavaScript.
+          The goal is to keep the layout minimal and readable, with a dark blue / violet palette
+          and a hint of red to match my artist identity.
         </p>
       </div>
     </section>
 
-    <!-- Music / Projects（你之后可以一个个换成真实作品） -->
+    <!-- Music / Projects（之后你可以一个一个换成真实作品） -->
     <section id="projects" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Music / Projects</h2>
@@ -181,7 +186,7 @@
     </section>
   </main>
 
-  <!-- 返回顶部按钮（简单一点就只用按钮 + JS，可选） -->
+  <!-- 返回顶部按钮 -->
   <button id="backToTop" class="back-to-top">↑ Back to top</button>
 
   <footer class="site-footer">
@@ -190,6 +195,7 @@
     </div>
   </footer>
 
+  <!-- JS 交互 -->
   <script src="script.js"></script>
 </body>
 </html>
