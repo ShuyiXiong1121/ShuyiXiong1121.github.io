@@ -1,10 +1,10 @@
 :root {
-  --bg: #040415;
-  --bg-alt: #070723;
+  --bg: #02020a;
+  --bg-alt: #02020a;
   --accent: #ff4b5c;          /* 暗一点的红 */
   --text: #f9f9ff;
   --muted: #a4a7c9;
-  --border: #222447;
+  --border: #252547;
 }
 
 * {
@@ -15,50 +15,53 @@ body {
   margin: 0;
   font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
-  background-color: #02020a;  /* 纯黑偏蓝一点 */
+  background-color: var(--bg);  /* 全站统一黑底 */
   line-height: 1.6;
-  overflow-x: hidden;         /* 防止色块移动时出现横向滚动条 */
+  overflow-x: hidden;
 }
 
-/* 背景柔光色块 */
+/* 背景柔光色块：更大，更柔，质感更好 */
 
 .bg-blob {
   position: fixed;
   z-index: -1;
   border-radius: 999px;
-  filter: blur(70px);
-  opacity: 0.55;
   pointer-events: none;
   mix-blend-mode: screen;
-  transition: transform 0.1s linear;
+  filter: blur(120px);
+  opacity: 0.75;
+  transition: transform 0.08s linear;
 }
 
-/* 左上偏蓝 */
+/* 左上偏蓝，拉长一点 */
 .blob1 {
-  width: 420px;
+  width: 520px;
   height: 420px;
-  background: radial-gradient(circle at 30% 30%, #3f7cff, transparent 60%);
-  top: -15%;
-  left: -18%;
+  background:
+    radial-gradient(circle at 20% 30%, #4c7cff, transparent 60%);
+  top: -18%;
+  left: -20%;
 }
 
-/* 右中偏蓝紫 */
+/* 中部偏蓝紫，主要照亮 Music / Projects 区域 */
 .blob2 {
-  width: 380px;
-  height: 380px;
-  background: radial-gradient(circle at 40% 30%, #8b4dff, transparent 60%);
-  top: 30%;
-  right: -12%;
+  width: 480px;
+  height: 420px;
+  background:
+    radial-gradient(circle at 40% 20%, #8b4dff, transparent 65%);
+  top: 35%;
+  right: -10%;
 }
 
-/* 左下偏紫红 */
+/* 底部偏紫红，照亮 Contact / Footer */
 .blob3 {
-  width: 460px;
+  width: 560px;
   height: 460px;
-  background: radial-gradient(circle at 40% 40%, #ff4b7a, transparent 65%);
-  bottom: -18%;
-  left: 8%;
-  opacity: 0.4;
+  background:
+    radial-gradient(circle at 40% 50%, #ff4b7a, transparent 70%);
+  bottom: -20%;
+  left: 5%;
+  opacity: 0.6;
 }
 
 /* 通用布局 */
@@ -69,12 +72,20 @@ body {
   padding: 0 1.25rem;
 }
 
+/* Section：全部统一背景，靠细线分区 */
+
 .section {
   padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.section:first-of-type {
+  border-top: none;  /* About 上面不画线 */
+}
+
+/* 保留一个很轻的“深浅变化”，但不抢背景色块的戏 */
 .section-alt {
-  background: linear-gradient(to bottom, #040415, #070723);
+  background: transparent;
 }
 
 .section-title {
@@ -95,9 +106,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(12px);
-  background: rgba(4, 4, 21, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  background: rgba(2, 2, 10, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .header-inner {
@@ -262,7 +273,7 @@ body {
 }
 
 .project-card {
-  background: var(--bg);
+  background: rgba(3, 3, 18, 0.96);
   border-radius: 0.9rem;
   border: 1px solid var(--border);
   padding: 1rem 1.1rem;
@@ -353,7 +364,7 @@ body {
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 1.3rem 0 2rem;
-  background: #030313;
+  background: #02020a;
 }
 
 .footer-inner {
