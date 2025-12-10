@@ -11,14 +11,13 @@
     rel="stylesheet"
   />
 
-  <!-- 样式 -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- 黑色背景上的不规则色块（会随滚动移动） -->
-  <div class="color-shape shape-1"></div>
-  <div class="color-shape shape-2"></div>
-  <div class="color-shape shape-3"></div>
+  <!-- 背景渐变 blob -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
 
   <!-- 顶部导航 -->
   <header class="site-header">
@@ -33,7 +32,7 @@
   </header>
 
   <main>
-    <!-- Hero：标题 + 头像 + avatar -->
+    <!-- Hero -->
     <section class="hero" id="top">
       <div class="container hero-inner">
         <div class="hero-text">
@@ -51,14 +50,14 @@
         </div>
 
         <div class="hero-media">
-          <!-- 真人头像（Profile.jpg） -->
+          <!-- 头像：Profile.jpg -->
           <img
             src="images/Profile.jpg?v=1"
             alt="Shuyi Xiong in the studio"
             class="hero-photo"
           />
 
-          <!-- 艺人 avatar（Avatar.JPG） -->
+          <!-- Avatar：Avatar.JPG -->
           <div class="avatar-card">
             <img
               src="images/Avatar.JPG?v=1"
@@ -146,7 +145,7 @@
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Contact</h2>
-        <p class="section-text">
+      <p class="section-text">
           For collaborations, school projects, or anything related to my music, feel free to reach out.
         </p>
 
@@ -187,7 +186,7 @@
     </section>
   </main>
 
-  <!-- 返回顶部按钮 -->
+  <!-- Back to top -->
   <button id="backToTop" class="back-to-top">↑ Back to top</button>
 
   <footer class="site-footer">
@@ -196,7 +195,6 @@
     </div>
   </footer>
 
-  <!-- JS 交互 -->
   <script src="script.js"></script>
 </body>
 </html>
