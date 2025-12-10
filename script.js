@@ -50,4 +50,3 @@ window.addEventListener("scroll", () => {
     blob.style.transform = `translateY(${offset}px)`;
   });
 });
-
