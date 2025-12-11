@@ -1,4 +1,3 @@
-js:
 // 背景色块随滚动轻微移动（parallax）
 const blobs = document.querySelectorAll(".bg-blob");
 
