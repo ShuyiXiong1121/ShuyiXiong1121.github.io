@@ -444,7 +444,7 @@ body::after {
   gap: 1.6rem;
 }
 
-/* 单个作品卡片——这里加了 flex，让播放器能贴底 */
+/* 单个作品卡片 */
 
 .track-card {
   background: radial-gradient(
@@ -457,8 +457,8 @@ body::after {
   padding: 1.35rem 1.4rem 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85);
-  display: flex;          /* 新增 */
-  flex-direction: column; /* 新增 */
+  display: flex;
+  flex-direction: column;
   gap: 0.65rem;
 }
 
@@ -482,11 +482,10 @@ body::after {
   color: var(--text-soft);
 }
 
-/* 自定义播放器外壳 —— 这里改成 margin-top: auto */
+/* 自定义播放器外壳 */
 
 .audio-shell {
-  margin-top: auto;       /* 关键：把播放器推到卡片底部 */
-  padding-top: 0.75rem;   /* 和上面内容留一点距离 */
+  margin-top: 0.3rem;
 }
 
 /* 让 audio 本体全宽 */
@@ -513,6 +512,7 @@ audio::-webkit-media-controls-time-remaining-display {
 /* Firefox 简单一点：外面包一个深色圆角背景 */
 @supports not (-webkit-appearance: none) {
   .audio-shell {
+    padding: 0.3rem 0.6rem;
     border-radius: 999px;
     background: #050509;
     border: 1px solid rgba(255, 255, 255, 0.7);
