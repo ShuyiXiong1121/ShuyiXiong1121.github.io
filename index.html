@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <title>Shuyi Xiong | Artist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Shuyi Xiong · electronic producer and sound designer. Personal artist site built as a programming final project."
+  />
 
   <!-- Raleway font -->
   <link
@@ -11,16 +15,16 @@
     rel="stylesheet"
   />
 
-  <!-- Main styles (注意：这里是 styles.css，有 s) -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- 背景不规则色块 -->
+  <!-- Background moving blobs -->
   <div class="bg-blob blob1"></div>
   <div class="bg-blob blob2"></div>
   <div class="bg-blob blob3"></div>
 
-  <!-- 顶部导航 -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">SHUYI XIONG</div>
@@ -32,31 +36,33 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <main>
+    <!-- Hero / Top section -->
     <section class="hero" id="top">
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="hero-tag">Electronic music · Sound design</p>
+          <p class="hero-tag">
+            ELECTRONIC MUSIC · SOUND DESIGN
+          </p>
           <h1 class="hero-title">Shuyi Xiong</h1>
-          <p class="hero-subtitle">
-            Producer and sound designer focused on groove, texture, and narrative-driven
-            electronic music. Shuyi produces across a range of styles including techno, UKG,
-            future bass, trap, psy-trance, experimental work, scores, and FX for different
-            contexts.
+          <p class="hero-lead">
+            Producer and sound designer focused on groove, texture, and
+            narrative-driven electronic music. Shuyi produces across a range of
+            styles including techno, UKG, future bass, trap, psy-trance,
+            experimental work, scores, and FX for different contexts.
           </p>
           <div class="hero-actions">
-            <a href="#music" class="btn btn-primary">Listen / View projects</a>
+            <a href="#listen" class="btn btn-primary">Listen / View projects</a>
             <a href="#contact" class="btn btn-ghost">Contact</a>
           </div>
         </div>
 
-        <aside class="hero-media">
-          <div class="profile-wrapper">
+        <div class="hero-visual">
+          <div class="profile-circle">
             <img
-              src="images/Profile.JPG"
+              src="images/Profile.jpg"
               alt="Shuyi Xiong in the studio"
-              class="profile-photo"
+              class="profile-image"
             />
           </div>
 
@@ -67,146 +73,229 @@
               class="avatar-image"
             />
             <div class="avatar-meta">
-              <span class="avatar-name">BUA</span>
-              <span class="avatar-role">artist avatar</span>
+              <span class="avatar-name">BUA · artist avatar</span>
             </div>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
-    <!-- About 区：你的新 bio 已经写好 -->
-    <section class="section" id="about">
-      <div class="container section-inner">
+    <!-- About section -->
+    <section id="about" class="section about-section">
+      <div class="container">
         <h2 class="section-title">About</h2>
-        <p class="section-text">
-          Shuyi Xiong is an electronic producer and multi-instrumentalist from Shanghai, China,
-          currently studying Electronic Production & Design at Berklee College of Music.
+        <p class="about-text">
+          Shuyi Xiong is an electronic producer and multi-instrumentalist from
+          Shanghai, China, currently studying Electronic Production &amp; Design
+          at Berklee College of Music.
         </p>
-        <p class="section-text">
-          His work spans a wide range of styles, including techno, UKG, future bass, trap,
-          psy-trance, experimental projects, as well as scores and FX for different contexts.
+        <p class="about-text">
+          His work spans a wide range of styles, including techno, UKG, future
+          bass, trap, psy-trance, experimental projects, as well as scores and
+          FX for different contexts.
         </p>
       </div>
     </section>
 
-    <!-- Music / Projects -->
-    <section class="section section-divider" id="music">
-      <div class="container section-inner">
+    <!-- Music / Projects cards -->
+    <section id="music" class="section projects-section">
+      <div class="container">
         <h2 class="section-title">Music / Projects</h2>
-        <p class="section-text">
-          These cards will hold a few key projects. For now they are placeholders that I can
-          replace with real releases, remixes, or sound design pieces.
+        <p class="section-intro">
+          These cards hold a few key projects. For now some of them are
+          placeholders that can be updated with final releases, remixes, or
+          sound design pieces.
         </p>
 
-        <div class="card-grid">
+        <div class="project-grid">
           <article class="project-card">
-            <h3 class="card-title">Mosaic</h3>
-            <p class="card-text">
-              A multi-section electronic track that moves through different moods like a mosaic:
-              layered rhythms, shifting textures, and changing energy.
+            <h3 class="project-title">Mosaic</h3>
+            <p class="project-text">
+              A multi-section electronic track that moves through different
+              moods like a mosaic: layered rhythms, shifting textures, and
+              changing energy.
             </p>
-            <p class="card-meta">
+            <p class="project-focus">
               Focus: structure, contrast, and detailed sound design.
             </p>
             <a
-              href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF?si=5mec3iEiRneEn3Nq3u3zGg"
-              class="card-link"
+              href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF"
               target="_blank"
-              rel="noopener noreferrer"
+              class="project-link"
             >
               Listen on Spotify (artist page)
             </a>
           </article>
 
           <article class="project-card">
-            <h3 class="card-title">Project Two</h3>
-            <p class="card-text">
-              Placeholder for another track or sound design project. I can update this later with a
-              short description and a direct link.
+            <h3 class="project-title">Project Two</h3>
+            <p class="project-text">
+              Placeholder for another track or sound design project that can be
+              updated later with a short description and a direct link.
             </p>
-            <p class="card-meta">
-              Focus: to be decided.
-            </p>
-            <p class="card-link disabled">Link coming soon</p>
+            <p class="project-focus">Focus: to be decided.</p>
+            <span class="project-link disabled">Link coming soon</span>
           </article>
 
           <article class="project-card">
-            <h3 class="card-title">Project Three</h3>
-            <p class="card-text">
-              Another slot reserved for a future release, live set, or experimental piece.
+            <h3 class="project-title">Project Three</h3>
+            <p class="project-text">
+              Another slot reserved for a future release, live set, or
+              experimental piece.
             </p>
-            <p class="card-meta">
+            <p class="project-focus">
               Focus: performance, experimentation, or collaboration.
             </p>
-            <p class="card-link disabled">Link coming soon</p>
+            <span class="project-link disabled">Link coming soon</span>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="section section-divider" id="contact">
-      <div class="container section-inner contact-layout">
-        <div>
+    <!-- Listen / Audio Players -->
+    <section id="listen" class="section audio-section">
+      <div class="container">
+        <h2 class="section-title">Listen</h2>
+        <p class="section-intro">
+          A few selected tracks, directly playable from this page.
+        </p>
+
+        <div class="audio-grid">
+
+          <!-- Track 1: CareLess -->
+          <article class="audio-card">
+            <h3 class="audio-title">CareLess</h3>
+            <p class="audio-meta">
+              Minimal Techno · Trap · Experimental · Psy-Trance
+            </p>
+            <p class="audio-desc">
+              Hybrid track that blends minimal techno, trap, experimental ideas,
+              and psy-trance energy — press play and take a short electronic
+              journey.
+            </p>
+            <audio
+              class="audio-player"
+              src="media/CareLess.mp3"
+              controls
+            >
+              Your browser does not support the audio element.
+            </audio>
+          </article>
+
+          <!-- Track 2: Love Will Conquer All (Shuyi Remix) -->
+          <article class="audio-card">
+            <h3 class="audio-title">Love Will Conquer All (Shuyi Remix)</h3>
+            <p class="audio-meta">
+              UKG · Future Bass · House · R&amp;B · Funk
+            </p>
+            <p class="audio-desc">
+              Personal remix of Lionel Richie’s “Love Will Conquer All,”
+              fusing UKG, future bass, house, R&amp;B, and funk into one
+              expressive take.
+            </p>
+            <audio
+              class="audio-player"
+              src="media/Love Will Conquer All  (Shuyi Remix).mp3"
+              controls
+            >
+              Your browser does not support the audio element.
+            </audio>
+          </article>
+
+          <!-- Track 3: UNDERTONE -->
+          <article class="audio-card">
+            <h3 class="audio-title">UNDERTONE</h3>
+            <p class="audio-meta">Minimal Techno · Bass-driven</p>
+            <p class="audio-desc">
+              Bass-focused minimal techno built on detailed sound design
+              and slowly shifting layers.
+            </p>
+            <audio
+              class="audio-player"
+              src="media/UNDERTONE.mp3"
+              controls
+            >
+              Your browser does not support the audio element.
+            </audio>
+          </article>
+
+          <!-- Track 4: 洗脑机 :: BrainWashMaschine -->
+          <article class="audio-card">
+            <h3 class="audio-title">洗脑机 :: BrainWashMaschine</h3>
+            <p class="audio-meta">Experimental Electronic</p>
+            <p class="audio-desc">
+              Experimental electronic piece that hits like a high-pressure
+              jet of synthetic sound washing through your brain.
+            </p>
+            <audio
+              class="audio-player"
+              src="media/洗脑机::BrainWashMaschine.mp3"
+              controls
+            >
+              Your browser does not support the audio element.
+            </audio>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-inner">
+        <div class="contact-text">
           <h2 class="section-title">Contact</h2>
-          <p class="section-text">
-            For collaborations, school projects, or anything related to my music, feel free to reach
-            out.
+          <p class="section-intro">
+            For collaborations, school projects, or anything related to my
+            music, feel free to reach out.
           </p>
 
-          <div class="contact-block">
-            <h3 class="contact-label">Email</h3>
-            <a href="mailto:geniusbua@gmail.com" class="contact-link">geniusbua@gmail.com</a>
-          </div>
-        </div>
+          <div class="contact-columns">
+            <div class="contact-column">
+              <h3 class="contact-heading">Email</h3>
+              <p class="contact-item">
+                <a href="mailto:geniusbua@gmail.com">geniusbua@gmail.com</a>
+              </p>
+            </div>
 
-        <div>
-          <h3 class="contact-label">Artist Links</h3>
-          <ul class="contact-links-list">
-            <li>
-              <a
-                href="https://www.instagram.com/bua_shuyi/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF?si=5mec3iEiRneEn3Nq3u3zGg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Spotify
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://music.apple.com/us/artist/shuyi-xiong/1826416373"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apple Music
-              </a>
-            </li>
-          </ul>
+            <div class="contact-column">
+              <h3 class="contact-heading">Artist Links</h3>
+              <p class="contact-item">
+                <a
+                  href="https://www.instagram.com/bua_shuyi/"
+                  target="_blank"
+                  rel="noreferrer"
+                >Instagram</a>
+              </p>
+              <p class="contact-item">
+                <a
+                  href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF?si=5mec3iEiRneEn3Nq3u3zGg"
+                  target="_blank"
+                  rel="noreferrer"
+                >Spotify</a>
+              </p>
+              <p class="contact-item">
+                <a
+                  href="https://music.apple.com/us/artist/shuyi-xiong/1826416373"
+                  target="_blank"
+                  rel="noreferrer"
+                >Apple Music</a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer shell (no copyright text) -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="#top" class="back-to-top">↑ Back to top</a>
-      <span class="footer-copy">
-        © Shuyi Xiong · Artist website for programming final project.
-      </span>
+      <!-- intentionally left blank -->
     </div>
   </footer>
 
-  <!-- 背景滚动 JS -->
+  <!-- Optional JS for background / interactions -->
   <script src="script.js"></script>
 </body>
 </html>
