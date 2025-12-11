@@ -453,14 +453,17 @@ body::after {
       transparent 55%
     ),
     linear-gradient(to bottom right, rgba(20, 16, 32, 0.96), rgba(6, 6, 12, 0.98));
-  border-radius: var(--radius-card);
+  border-radius: 18px;
   padding: 1.35rem 1.4rem 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85);
+
+  /* 新增：让内容竖着排，播放器可以贴到底 */
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
 }
+
 
 .track-title {
   margin: 0;
@@ -485,8 +488,11 @@ body::after {
 /* 自定义播放器外壳 */
 
 .audio-shell {
-  margin-top: 0.3rem;
+  /* 让上面的文字占完空间以后，播放器顶到卡片底部 */
+  margin-top: auto;
+  padding-top: 0.75rem;
 }
+
 
 /* 让 audio 本体全宽 */
 audio {
