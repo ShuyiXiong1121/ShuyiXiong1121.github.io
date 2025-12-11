@@ -1,267 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Shuyi Xiong | Artist</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shuyi Xiong | Artist</title>
 
-    <!-- Raleway 字体 -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Raleway font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- 背景色块 -->
-    <div class="bg-blobs">
-      <div class="bg-blob blob-1"></div>
-      <div class="bg-blob blob-2"></div>
-      <div class="bg-blob blob-3"></div>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- 背景柔光色块 -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">SHUYI XIONG</a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#music">Music</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- 顶部导航 -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="site-logo">SHUYI XIONG</div>
-        <nav class="site-nav">
-          <a href="#about">About</a>
-          <a href="#music">Music</a>
-          <a href="#contact">Contact</a>
-        </nav>
+  <main id="top">
+    <!-- Hero 区 -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-tag">Electronic Music · Sound Design</p>
+          <h1 class="hero-title">Shuyi Xiong</h1>
+          <p class="hero-subtitle">
+            Producer and sound designer focused on groove, texture, and narrative-driven
+            electronic music. Shuyi produces across a range of styles including techno,
+            UKG, future bass, trap, psy-trance, experimental work, scores, and FX.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#music" class="btn btn-primary">Listen / View projects</a>
+            <a href="#contact" class="btn btn-outline">Contact</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-photo-circle">
+            <img
+              src="images/Profile.jpg"
+              alt="Shuyi Xiong in the studio"
+              class="hero-photo"
+            />
+          </div>
+
+          <div class="hero-avatar-card">
+            <img
+              src="images/Avatar.JPG"
+              alt="BUA artist avatar"
+              class="hero-avatar-thumb"
+            />
+            <div class="hero-avatar-text">
+              <p class="hero-avatar-title">BUA</p>
+              <p class="hero-avatar-label">artist avatar</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" id="top">
-        <div class="container hero-inner">
-          <div class="hero-text">
-            <p class="hero-tagline">Electronic Music · Sound Design</p>
-            <h1 class="hero-title">Shuyi Xiong</h1>
-            <p class="hero-subtitle">
-              Producer and sound designer focused on groove, texture, and
-              narrative-driven electronic music. Shuyi produces across styles
-              including techno, UKG, future bass, trap, psy-trance, experimental
-              work, scores, and FX for different contexts.
+    <!-- About 区 -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <p class="section-copy">
+          Shuyi Xiong is an electronic producer and multi-instrumentalist from Shanghai,
+          China, currently studying Electronic Production &amp; Design at Berklee College of Music.
+        </p>
+        <p class="section-copy">
+          Shuyi has explored a wide range of styles, including techno, UKG, future bass, trap,
+          psy-trance, experimental projects, and soundtrack-style work, as well as sound design and
+          FX for different contexts.
+        </p>
+        <p class="section-copy">
+          Beyond personal releases, Shuyi has contributed music and sound work to various projects,
+          including music for DESCENTE’s Great Wall runway show in Beijing, score and sound for a
+          China Academy of Art visual project, sound design for a well-known Shanghai musical, and
+          audio for a comic exhibition.
+        </p>
+      </div>
+    </section>
+
+    <!-- Music / Projects 区 -->
+    <section class="section section-music" id="music">
+      <div class="container">
+        <h2 class="section-title">Music / Projects</h2>
+        <p class="section-copy">
+          A small selection of current pieces. Press play to listen and drag the progress bar
+          to explore the tracks.
+        </p>
+
+        <div class="tracks-grid">
+          <!-- CareLess -->
+          <article class="track-card">
+            <h3 class="track-title">CareLess</h3>
+            <p class="track-meta">
+              Minimal Techno · Trap · Experimental · Psy-Trance
+            </p>
+            <p class="track-text">
+              Hybrid track that blends minimal techno, trap, experimental ideas, and
+              psy-trance energy into one electronic journey.
             </p>
 
-            <div class="hero-actions">
-              <a href="#music" class="btn btn-primary">Music / Projects</a>
-              <a href="#contact" class="btn btn-outline">Contact</a>
+            <div class="audio-shell">
+              <audio
+                class="track-audio"
+                src="media/CareLess.mp3"
+                controls
+              ></audio>
             </div>
-          </div>
+          </article>
 
-          <div class="hero-media">
-            <div class="profile-orbit">
-              <img
-                src="images/Profile.jpg"
-                alt="Shuyi Xiong in the studio"
-                class="profile-photo"
-              />
-            </div>
-
-            <div class="avatar-card">
-              <div class="avatar-thumb">
-                <img
-                  src="images/Avatar.JPG"
-                  alt="BUA artist avatar"
-                  class="avatar-img"
-                />
-              </div>
-              <div class="avatar-meta">
-                <div class="avatar-name">BUA</div>
-                <div class="avatar-label">artist avatar</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section class="section" id="about">
-        <div class="container">
-          <h2 class="section-title">About</h2>
-          <p class="section-text">
-            Shuyi Xiong is an electronic producer and multi-instrumentalist from
-            Shanghai, China, currently studying Electronic Production &amp;
-            Design at Berklee College of Music.
-          </p>
-          <p class="section-text">
-            His work spans a wide range of styles, including techno, UKG, future
-            bass, trap, psy-trance, experimental projects, as well as scores and
-            FX for different contexts.
-          </p>
-          <p class="section-text">
-            Shuyi has contributed to a variety of projects, including (but not
-            limited to) music for DESCENTE’s Great Wall runway show in Beijing,
-            visual scoring work for China Academy of Art final projects, sound
-            design for a well-known Shanghai musical production, and soundscapes
-            for a comic exhibition.
-          </p>
-        </div>
-      </section>
-
-      <!-- MUSIC / PROJECTS -->
-      <section class="section section-music" id="music">
-        <div class="container">
-          <h2 class="section-title">Music / Projects</h2>
-          <p class="section-text section-text-sub">
-            A small selection of current pieces. Press play to listen and drag
-            the progress bar to explore the tracks.
-          </p>
-
-          <div class="tracks-grid">
-            <!-- CareLess -->
-            <article class="track-card">
-              <h3 class="track-title">CareLess</h3>
-              <p class="track-meta">
-                Minimal Techno · Trap · Experimental · Psy-Trance
-              </p>
-              <p class="track-desc">
-                Hybrid track that blends minimal techno, trap, experimental
-                ideas, and psy-trance energy into one electronic journey.
-              </p>
-              <div class="track-player-wrap">
-                <div class="player-shell">
-                  <audio
-                    controls
-                    preload="metadata"
-                    src="media/CareLess.mp3"
-                    class="track-audio"
-                  >
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
-              </div>
-            </article>
-
-            <!-- Love Will Conquer All Remix -->
-            <article class="track-card">
-              <h3 class="track-title">
-                Love Will Conquer All (Shuyi Remix)
-              </h3>
-              <p class="track-meta">
-                UKG · Future Bass · House · R&amp;B · Funk
-              </p>
-              <p class="track-desc">
-                Personal remix of Lionel Richie’s “Love Will Conquer All,”
-                fusing UKG, future bass, house, R&amp;B, and funk into one
-                expressive re-imagining.
-              </p>
-              <div class="track-player-wrap">
-                <div class="player-shell">
-                  <audio
-                    controls
-                    preload="metadata"
-                    src="media/Love Will Conquer All (Shuyi Remix).mp3"
-                    class="track-audio"
-                  >
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
-              </div>
-            </article>
-
-            <!-- UNDERTONE -->
-            <article class="track-card">
-              <h3 class="track-title">UNDERTONE</h3>
-              <p class="track-meta">Minimal Techno · Bass-driven</p>
-              <p class="track-desc">
-                Bass-focused minimal techno built on detailed sound design and
-                slowly evolving layers.
-              </p>
-              <div class="track-player-wrap">
-                <div class="player-shell">
-                  <audio
-                    controls
-                    preload="metadata"
-                    src="media/UNDERTONE.mp3"
-                    class="track-audio"
-                  >
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
-              </div>
-            </article>
-
-            <!-- 洗脑机 -->
-            <article class="track-card">
-              <h3 class="track-title">洗脑机::BrainWashMaschine</h3>
-              <p class="track-meta">Experimental Electronic</p>
-              <p class="track-desc">
-                Experimental electronic piece that hits like a high-pressure jet
-                of sound washing through your brain.
-              </p>
-              <div class="track-player-wrap">
-                <div class="player-shell">
-                  <audio
-                    controls
-                    preload="metadata"
-                    src="media/洗脑机::BrainWashMaschine.mp3"
-                    class="track-audio"
-                  >
-                    Your browser does not support the audio element.
-                  </audio>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section class="section section-contact" id="contact">
-        <div class="container contact-inner">
-          <div>
-            <h2 class="section-title">Contact</h2>
-            <p class="section-text">
-              For collaborations, school projects, or anything related to my
-              music, feel free to reach out.
+          <!-- Love Will Conquer All (Shuyi Remix) -->
+          <article class="track-card">
+            <h3 class="track-title">Love Will Conquer All (Shuyi Remix)</h3>
+            <p class="track-meta">
+              UKG · Future Bass · House · R&amp;B · Funk
             </p>
+            <p class="track-text">
+              Personal remix of Lionel Richie’s “Love Will Conquer All,” fusing UKG,
+              future bass, house, R&amp;B, and funk into one expressive re-imagining.
+            </p>
+
+            <div class="audio-shell">
+              <audio
+                class="track-audio"
+                src="media/Love Will Conquer All  (Shuyi Remix).mp3"
+                controls
+              ></audio>
+            </div>
+          </article>
+
+          <!-- UNDERTONE -->
+          <article class="track-card">
+            <h3 class="track-title">UNDERTONE</h3>
+            <p class="track-meta">Minimal Techno · Bass-driven</p>
+            <p class="track-text">
+              Bass-focused minimal techno built on detailed sound design and slowly
+              evolving layers.
+            </p>
+
+            <div class="audio-shell">
+              <audio
+                class="track-audio"
+                src="media/UNDERTONE.mp3"
+                controls
+              ></audio>
+            </div>
+          </article>
+
+          <!-- 洗脑机::BrainWashMaschine -->
+          <article class="track-card">
+            <h3 class="track-title">洗脑机::BrainWashMaschine</h3>
+            <p class="track-meta">Experimental Electronic</p>
+            <p class="track-text">
+              Experimental electronic piece that hits like a high-pressure jet of sound
+              washing through your brain.
+            </p>
+
+            <div class="audio-shell">
+              <audio
+                class="track-audio"
+                src="media/洗脑机::BrainWashMaschine.mp3"
+                controls
+              ></audio>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact 区 -->
+    <section class="section section-contact" id="contact">
+      <div class="container contact-inner">
+        <div>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-copy">
+            For collaborations, school projects, or anything related to my music,
+            feel free to reach out.
+          </p>
+        </div>
+
+        <div class="contact-columns">
+          <div class="contact-block">
+            <h3 class="contact-heading">Email</h3>
+            <a href="mailto:geniusbua@gmail.com" class="contact-link">
+              geniusbua@gmail.com
+            </a>
           </div>
 
-          <div class="contact-grid">
-            <div class="contact-block">
-              <h3 class="contact-heading">Email</h3>
-              <a
-                href="mailto:geniusbua@gmail.com"
-                class="contact-link"
-                target="_blank"
-                rel="noreferrer"
-                >geniusbua@gmail.com</a
-              >
-            </div>
-
-            <div class="contact-block">
-              <h3 class="contact-heading">Artist Links</h3>
-              <div class="contact-links">
-                <a
-                  href="https://www.instagram.com/bua_shuyi/"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Instagram</a
-                >
-                <a
-                  href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF?si=5mec3iEiRneEn3Nq3u3zGg"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Spotify</a
-                >
-                <a
-                  href="https://music.apple.com/us/artist/shuyi-xiong/1826416373"
-                  target="_blank"
-                  rel="noreferrer"
-                  >Apple Music</a
-                >
-              </div>
-            </div>
+          <div class="contact-block">
+            <h3 class="contact-heading">Artist Links</h3>
+            <a href="https://www.instagram.com" target="_blank" class="contact-link">
+              Instagram
+            </a>
+            <a href="https://open.spotify.com" target="_blank" class="contact-link">
+              Spotify
+            </a>
+            <a href="https://music.apple.com" target="_blank" class="contact-link">
+              Apple Music
+            </a>
           </div>
         </div>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
-  </body>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
