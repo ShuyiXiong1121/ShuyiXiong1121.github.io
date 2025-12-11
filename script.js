@@ -1,106 +1,104 @@
-// script.js
+// 背景色块随滚动轻微移动（parallax）
+const blobs = document.querySelectorAll(".bg-blob");
 
-// smooth scroll for nav links
-document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav-link");
+window.addEventListener("scroll", () => {
+  const y = window.scrollY || window.pageYOffset;
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-      if (!href || !href.startsWith("#")) return;
+  blobs.forEach((blob, index) => {
+    const speed = (index + 1) * 0.04; // 每个色块速度略不同
+    blob.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+  });
+});
 
-      const target = document.querySelector(href);
-      if (!target) return;
+// 导航平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const targetId = link.getAttribute("href").substring(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
 
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    e.preventDefault();
+    const rect = target.getBoundingClientRect();
+    const offset = rect.top + window.pageYOffset - 72; // 顶部留一点距离
+
+    window.scrollTo({
+      top: offset,
+      behavior: "smooth",
     });
   });
 });
 
-// simple parallax for background blobs
-(function () {
-  const blobs = document.querySelectorAll(".bg-blob");
-  if (!blobs.length) return;
+// 自定义音频播放器
+const players = document.querySelectorAll(".audio-player");
+const formatTime = (seconds) => {
+  if (isNaN(seconds) || seconds < 0) return "0:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60)
+    .toString()
+    .padStart(2, "0");
+  return `${m}:${s}`;
+};
 
-  const factors = [0.12, -0.08, 0.18];
+let currentAudio = null;
+let currentPlayer = null;
 
-  const handleScroll = () => {
-    const y = window.scrollY || window.pageYOffset;
-    blobs.forEach((blob, index) => {
-      const f = factors[index] ?? 0.1;
-      blob.style.transform = `translate3d(0, ${y * f}px, 0)`;
-    });
-  };
+players.forEach((player) => {
+  const audio = player.querySelector("audio");
+  const playBtn = player.querySelector(".audio-play");
+  const range = player.querySelector('input[type="range"]');
+  const currentTimeEl = player.querySelector(".audio-time .current");
+  const durationEl = player.querySelector(".audio-time .duration");
 
-  handleScroll();
-  window.addEventListener("scroll", handleScroll, { passive: true });
-})();
+  if (!audio || !playBtn || !range) return;
 
-// custom audio players
-(function () {
-  const players = document.querySelectorAll(".audio-player");
-  if (!players.length) return;
-
-  function formatTime(seconds) {
-    if (isNaN(seconds)) return "0:00";
-    const m = Math.floor(seconds / 60);
-    const s = Math.floor(seconds % 60)
-      .toString()
-      .padStart(2, "0");
-    return `${m}:${s}`;
-  }
-
-  players.forEach((player) => {
-    const audio = player.querySelector(".player-audio");
-    const playBtn = player.querySelector(".player-btn");
-    const progress = player.querySelector(".player-progress");
-    const currentTimeEl = player.querySelector(".current-time");
-    const durationEl = player.querySelector(".duration");
-
-    if (!audio || !playBtn || !progress) return;
-
-    // set duration when metadata loads
-    audio.addEventListener("loadedmetadata", () => {
-      durationEl.textContent = formatTime(audio.duration);
-    });
-
-    // play / pause
-    playBtn.addEventListener("click", () => {
-      if (audio.paused) {
-        // pause all other players
-        players.forEach((p) => {
-          if (p === player) return;
-          const a = p.querySelector(".player-audio");
-          const b = p.querySelector(".player-btn");
-          if (a) a.pause();
-          if (b) b.textContent = "▶";
-          p.classList.remove("is-playing");
-        });
-
-        audio.play();
-        player.classList.add("is-playing");
-        playBtn.textContent = "❚❚";
-      } else {
-        audio.pause();
-        player.classList.remove("is-playing");
-        playBtn.textContent = "▶";
-      }
-    });
-
-    // update progress bar + current time
-    audio.addEventListener("timeupdate", () => {
-      if (!audio.duration) return;
-      const percent = (audio.currentTime / audio.duration) * 100;
-      progress.value = percent;
-      currentTimeEl.textContent = formatTime(audio.currentTime);
-    });
-
-    // seeking
-    progress.addEventListener("input", () => {
-      if (!audio.duration) return;
-      const newTime = (progress.value / 100) * audio.duration;
-      audio.currentTime = newTime;
-    });
+  // 设置总时长
+  audio.addEventListener("loadedmetadata", () => {
+    durationEl.textContent = formatTime(audio.duration);
   });
-})();
+
+  // 播放/暂停
+  playBtn.addEventListener("click", () => {
+    // 如果点击的是当前正在播放的，直接切换
+    if (audio === currentAudio && !audio.paused) {
+      audio.pause();
+      player.classList.remove("is-playing");
+      return;
+    }
+
+    // 先把其他播放器停掉
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      if (currentPlayer) {
+        currentPlayer.classList.remove("is-playing");
+      }
+    }
+
+    // 播放当前
+    audio.play().catch(() => {});
+    currentAudio = audio;
+    currentPlayer = player;
+    player.classList.add("is-playing");
+  });
+
+  // 音频播放进度更新
+  audio.addEventListener("timeupdate", () => {
+    const progress = (audio.currentTime / audio.duration) * 100 || 0;
+    range.value = progress;
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  });
+
+  // 播放结束自动复位
+  audio.addEventListener("ended", () => {
+    player.classList.remove("is-playing");
+    range.value = 0;
+    currentTimeEl.textContent = "0:00";
+  });
+
+  // 拖动进度条
+  range.addEventListener("input", () => {
+    if (!audio.duration || isNaN(audio.duration)) return;
+    const newTime = (range.value / 100) * audio.duration;
+    audio.currentTime = newTime;
+    currentTimeEl.textContent = formatTime(newTime);
+  });
+});
