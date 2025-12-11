@@ -108,7 +108,7 @@ body {
 /* Hero 区 */
 .hero {
   position: relative;
-  padding: 80px 0 96px;
+  padding: 96px 0 96px;
   z-index: 1;
 }
 
@@ -117,6 +117,7 @@ body {
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 72px;
   align-items: center;
+  min-height: 64vh;          /* 让整块区域看起来更“中间” */
 }
 
 .hero-text {
@@ -201,10 +202,10 @@ body {
   gap: 22px;
 }
 
-/* 圆形渐变 + 头像 */
+/* 圆形渐变 + 头像 —— 缩小了一点，比例更正常 */
 .hero-orb {
-  width: 340px;
-  height: 340px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   background: conic-gradient(
     from 210deg,
@@ -213,11 +214,11 @@ body {
     #8941ff,
     #ff4b7b
   );
-  padding: 14px; /* 渐变外圈 */
+  padding: 12px; /* 渐变外圈 */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.9);
 }
 
 .hero-photo-img {
@@ -488,6 +489,7 @@ body {
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 40px;
+    min-height: auto;
   }
 
   .hero-media {
@@ -495,8 +497,8 @@ body {
   }
 
   .hero-orb {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
     padding: 10px;
   }
 
