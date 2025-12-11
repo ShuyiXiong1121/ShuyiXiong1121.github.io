@@ -5,24 +5,26 @@
   <title>Shuyi Xiong | Artist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Raleway 字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <!-- 主样式 -->
+  <!-- Raleway font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- 背景发光色块（不规则 + 可移动） -->
-  <div class="bg-layer">
-    <div class="shape shape-a" data-speed="0.15"></div>
-    <div class="shape shape-b" data-speed="0.25"></div>
-    <div class="shape shape-c" data-speed="0.35"></div>
-  </div>
+  <!-- 背景不规则色块 -->
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
 
   <!-- 顶部导航 -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="site-logo">SHUYI XIONG</div>
-      <nav class="site-nav">
+      <div class="logo">SHUYI XIONG</div>
+      <nav class="main-nav">
         <a href="#about">About</a>
         <a href="#music">Music</a>
         <a href="#contact">Contact</a>
@@ -30,159 +32,126 @@
     </div>
   </header>
 
+  <!-- Hero 区 -->
   <main>
-    <!-- Hero 区 -->
     <section class="hero" id="top">
       <div class="container hero-inner">
-        <div class="hero-left">
-          <p class="hero-tagline">Electronic music · Sound design</p>
+        <div class="hero-text">
+          <p class="hero-tag">Electronic music · Sound design</p>
           <h1 class="hero-title">Shuyi Xiong</h1>
           <p class="hero-subtitle">
-            Producer and sound designer focused on groove, texture, and narrative-driven electronic music.
-            Shuyi produces across techno, UKG, future bass, trap, psy-trance, experimental work, scores, FX, and more.
+            Producer and sound designer focused on groove, texture, and narrative-driven electronic
+            music. Shuyi produces across a range of electronic styles, including techno, UKG,
+            future bass, trap, psy-trance, experimental work, scores, and FX for different contexts.
           </p>
-
           <div class="hero-actions">
             <a href="#music" class="btn btn-primary">Listen / View projects</a>
             <a href="#contact" class="btn btn-ghost">Contact</a>
           </div>
         </div>
 
-        <div class="hero-right">
-          <!-- 头像 -->
-          <div class="profile-circle">
-            <img src="images/Profile.jpg" alt="Shuyi Xiong in the studio" />
+        <aside class="hero-media">
+          <div class="profile-wrapper">
+            <img
+              src="images/Profile.JPG"
+              alt="Shuyi Xiong in the studio"
+              class="profile-photo"
+            />
           </div>
 
-          <!-- Avatar 卡片 -->
           <div class="avatar-card">
-            <div class="avatar-image-wrap">
-              <img src="images/Avatar.JPG" alt="BUA artist avatar" />
-            </div>
+            <img
+              src="images/Avatar.JPG"
+              alt="BUA artist avatar"
+              class="avatar-image"
+            />
             <div class="avatar-meta">
               <span class="avatar-name">BUA</span>
-              <span class="avatar-label">artist avatar</span>
+              <span class="avatar-role">artist avatar</span>
             </div>
           </div>
-        </div>
+        </aside>
       </div>
-
-      <div class="section-divider"></div>
     </section>
 
-    <!-- About -->
+    <!-- About 区（新 bio） -->
     <section class="section" id="about">
-      <div class="container">
+      <div class="container section-inner">
         <h2 class="section-title">About</h2>
         <p class="section-text">
-          I am an Electronic Production &amp; Design student and electronic music producer. I enjoy building detailed
-          sound worlds that focus on groove, texture, and small shifts that keep a track alive.
+          Shuyi Xiong is an electronic producer and multi-instrumentalist from Shanghai, China,
+          currently studying Electronic Production & Design at Berklee College of Music.
         </p>
         <p class="section-text">
-          This website is coded with HTML and CSS, plus a small amount of JavaScript. The goal is to keep the layout
-          minimal and readable, with a mostly black canvas and subtle blue / violet / red highlights that match my
-          artist identity.
+          His work spans a wide range of styles, including techno, UKG, future bass, trap,
+          psy-trance, experimental projects, as well as scores and FX for different contexts.
         </p>
       </div>
-
-      <div class="section-divider"></div>
     </section>
 
-    <!-- Music / Projects -->
-    <section class="section" id="music">
-      <div class="container">
+    <!-- Music / Projects 区 -->
+    <section class="section section-divider" id="music">
+      <div class="container section-inner">
         <h2 class="section-title">Music / Projects</h2>
         <p class="section-text">
-          These cards will hold a few key projects. For now they are placeholders that I can replace with real releases,
-          remixes, or sound design pieces.
+          These cards will hold a few key projects. For now they are placeholders that I can replace
+          with real releases, remixes, or sound design pieces.
         </p>
 
         <div class="card-grid">
-          <!-- 卡片 1 -->
           <article class="project-card">
-            <h3 class="project-title">Mosaic</h3>
-            <p class="project-text">
-              A multi-section electronic track that moves through different moods like a mosaic: layered rhythms,
-              shifting textures, and changing energy.
+            <h3 class="card-title">Mosaic</h3>
+            <p class="card-text">
+              A multi-section electronic track that moves through different moods like a mosaic:
+              layered rhythms, shifting textures, and changing energy.
             </p>
-            <p class="project-focus">
+            <p class="card-meta">
               Focus: structure, contrast, and detailed sound design.
             </p>
-            <a class="project-link"
-               href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF?si=5mec3iEiRneEn3Nq3u3zGg"
-               target="_blank" rel="noopener">
+            <a
+              href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF?si=5mec3iEiRneEn3Nq3u3zGg"
+              class="card-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Listen on Spotify (artist page)
             </a>
           </article>
 
-          <!-- 卡片 2 -->
           <article class="project-card">
-            <h3 class="project-title">Project Two</h3>
-            <p class="project-text">
-              Placeholder for another track or sound design project. I can update this later with a short description
-              and a direct link.
+            <h3 class="card-title">Project Two</h3>
+            <p class="card-text">
+              Placeholder for another track or sound design project. I can update this later with a
+              short description and a direct link.
             </p>
-            <p class="project-focus">
+            <p class="card-meta">
               Focus: to be decided.
             </p>
-            <span class="project-link disabled">Link coming soon</span>
+            <p class="card-link disabled">Link coming soon</p>
           </article>
 
-          <!-- 卡片 3 -->
           <article class="project-card">
-            <h3 class="project-title">Project Three</h3>
-            <p class="project-text">
+            <h3 class="card-title">Project Three</h3>
+            <p class="card-text">
               Another slot reserved for a future release, live set, or experimental piece.
             </p>
-            <p class="project-focus">
+            <p class="card-meta">
               Focus: performance, experimentation, or collaboration.
             </p>
-            <span class="project-link disabled">Link coming soon</span>
+            <p class="card-link disabled">Link coming soon</p>
           </article>
         </div>
       </div>
-
-      <div class="section-divider"></div>
     </section>
 
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="container contact-layout">
-        <div class="contact-left">
+    <!-- Contact 区 -->
+    <section class="section section-divider" id="contact">
+      <div class="container section-inner contact-layout">
+        <div>
           <h2 class="section-title">Contact</h2>
           <p class="section-text">
-            For collaborations, school projects, or anything related to my music, feel free to reach out.
+            For collaborations, school projects, or anything related to my music, feel free to reach
+            out.
           </p>
 
-          <div class="contact-block">
-            <h3 class="contact-label">Email</h3>
-            <a class="contact-link" href="mailto:geniusbua@gmail.com">geniusbua@gmail.com</a>
-          </div>
-        </div>
-
-        <div class="contact-right">
-          <h3 class="contact-label">Artist Links</h3>
-          <ul class="contact-links-list">
-            <li><a href="https://www.instagram.com/bua_shuyi/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://open.spotify.com/artist/7JOn9AABdj9mNxXnaVahmF?si=5mec3iEiRneEn3Nq3u3zGg" target="_blank" rel="noopener">Spotify</a></li>
-            <li><a href="https://music.apple.com/us/artist/shuyi-xiong/1826416373" target="_blank" rel="noopener">Apple Music</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section-divider"></div>
-    </section>
-  </main>
-
-  <!-- 底部 -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© Shuyi Xiong · Artist website for programming final project.</span>
-      <a href="#top" class="back-to-top">↑ Back to top</a>
-    </div>
-  </footer>
-
-  <!-- JS：让发光色块随滚动微动 -->
-  <script src="script.js"></script>
-</body>
-</html>
+          <d
