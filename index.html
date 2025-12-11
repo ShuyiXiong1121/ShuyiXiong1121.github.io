@@ -63,16 +63,13 @@
           <!-- 右侧头像 + avatar -->
           <div class="hero-media">
             <div class="hero-orb">
-              <div class="hero-orb-inner">
-                <div class="hero-photo">
-                  <!-- 注意：文件名大小写要和仓库一致：Profile.jpg -->
-                  <img
-                    src="./images/Profile.jpg"
-                    alt="Shuyi Xiong in the studio"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+              <!-- 这里一定要和 repo 里的文件名一模一样：Profile.jpg -->
+              <img
+                src="./images/Profile.jpg"
+                alt="Shuyi Xiong in the studio"
+                class="hero-photo-img"
+                loading="lazy"
+              />
             </div>
 
             <div class="hero-avatar-card">
@@ -119,7 +116,7 @@
         </div>
       </section>
 
-      <!-- Music / Projects（原来的 Listen 区） -->
+      <!-- Music / Projects（原 Listen 区，现在改名） -->
       <section id="music-projects" class="section section-music">
         <div class="container">
           <h2 class="section-title">Music / Projects</h2>
@@ -211,7 +208,6 @@
                   <span class="duration">0:00</span>
                 </div>
 
-                <!-- 如果文件名空格数量不一样，可以手动改这行的 src -->
                 <audio
                   id="audio-lwca"
                   src="media/Love Will Conquer All (Shuyi Remix).mp3"
@@ -352,7 +348,7 @@
       </section>
     </main>
 
-    <!-- 不再需要 footer copyright -->
+    <!-- 没有 footer copyright 了 -->
 
     <script src="script.js"></script>
   </body>
