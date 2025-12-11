@@ -6,11 +6,11 @@
   --fg-soft: #aab0c8;
   --accent: #ff4b7d;
   --accent-2: #7e5cff;
-  --card-bg: rgba(10, 10, 20, 0.98);
-  --card-outline: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(6, 6, 12, 0.98);
+  --card-outline: rgba(255, 255, 255, 0.06);
   --border-radius-lg: 24px;
   --border-radius-pill: 999px;
-  --shadow-soft: 0 40px 120px rgba(0, 0, 0, 0.9);
+  --shadow-soft: 0 32px 90px rgba(0, 0, 0, 0.9);
 }
 
 *,
@@ -34,26 +34,42 @@ body {
 }
 
 /* =============== 背景柔光色块 =================== */
+/* 主要是黑色，色块只做很轻的柔光 */
 
 .bg-blob {
   position: fixed;
   inset: 0;
   pointer-events: none;
   mix-blend-mode: screen;
-  opacity: 0.35; /* 黑色为主，色块只是柔光 */
+  opacity: 0.22;          /* 整体很淡 */
   z-index: -2;
 }
 
 .blob1 {
-  background: radial-gradient(circle at 0% 0%, #4b3bff 0%, transparent 55%);
+  /* 左上轻微蓝紫 */
+  background: radial-gradient(
+    circle at 0% 0%,
+    rgba(110, 96, 255, 0.9) 0%,
+    transparent 60%
+  );
 }
 
 .blob2 {
-  background: radial-gradient(circle at 100% 100%, #ff4b7d 0%, transparent 58%);
+  /* 右下轻微紫红 */
+  background: radial-gradient(
+    circle at 100% 100%,
+    rgba(255, 75, 125, 0.8) 0%,
+    transparent 62%
+  );
 }
 
 .blob3 {
-  background: radial-gradient(circle at 80% 10%, #0ff4ff 0%, transparent 55%);
+  /* 中间轻一点的冷蓝光，拉整体层次 */
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(0, 196, 255, 0.6) 0%,
+    transparent 65%
+  );
 }
 
 /* =============== 布局 / 容器 =================== */
@@ -91,8 +107,8 @@ body {
   backdrop-filter: blur(24px);
   background: linear-gradient(
     to bottom,
-    rgba(5, 5, 14, 0.92),
-    rgba(5, 5, 14, 0.82),
+    rgba(5, 5, 12, 0.96),
+    rgba(5, 5, 12, 0.88),
     transparent
   );
 }
@@ -229,9 +245,17 @@ body {
   border-radius: 50%;
   border: 4px solid #7e5cff;
   overflow: hidden;
-  box-shadow: 0 0 60px rgba(126, 92, 255, 0.8);
-  background: radial-gradient(circle at 30% 0%, #ff4b7d, transparent 60%),
-    radial-gradient(circle at 70% 100%, #7e5cff, transparent 60%);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
+  background: radial-gradient(
+      circle at 30% 0%,
+      rgba(255, 75, 125, 0.45),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 100%,
+      rgba(126, 92, 255, 0.5),
+      transparent 60%
+    );
 }
 
 .hero-photo {
@@ -248,8 +272,12 @@ body {
   gap: 0.9rem;
   padding: 0.7rem 1.2rem;
   border-radius: 999px;
-  background: radial-gradient(circle at 0% 0%, rgba(255, 75, 125, 0.4), transparent 60%),
-    rgba(15, 7, 20, 0.96);
+  background: radial-gradient(
+      circle at 15% 0%,
+      rgba(255, 75, 125, 0.25),
+      transparent 70%
+    ),
+    rgba(10, 6, 14, 0.96);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.9);
 }
 
@@ -306,8 +334,12 @@ body {
 }
 
 .track-card {
-  background: radial-gradient(circle at 0% 0%, rgba(255, 75, 125, 0.3), transparent 65%),
-    radial-gradient(circle at 100% 100%, rgba(126, 92, 255, 0.45), transparent 65%),
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 75, 125, 0.06),
+      rgba(126, 92, 255, 0.09)
+    ),
     var(--card-bg);
   border-radius: var(--border-radius-lg);
   padding: 1.6rem 1.8rem 1.6rem;
@@ -351,7 +383,7 @@ body {
   outline: none;
 }
 
-/* WebKit 浏览器：黑白极简播放器 */
+/* WebKit 浏览器：黑底白控件 */
 
 audio::-webkit-media-controls-panel {
   background-color: #050509;
@@ -368,7 +400,6 @@ audio::-webkit-media-controls-time-remaining-display {
   filter: invert(1); /* 图标和条变成白色系 */
 }
 
-/* 让时间文字淡一点 */
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
   color: #ffffff;
